@@ -33,6 +33,7 @@ app.post('/shorten', (req, res) => {
     urlSchema.URLS.push({
         originalUrl: url,
         code: `${randomGeneratedUrl}`,
+        shortUrl : `${DOMAIN}/${randomGeneratedUrl}`
     });
     res.json({
         originalUrl: url,

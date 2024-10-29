@@ -7,6 +7,8 @@ import _ from 'lodash';
 app.use(express.json());
 
 
+
+const DOMAIN = "http://localhost:3000"
 const urlSchema = {
     URLS : []
 }
@@ -30,11 +32,12 @@ app.post('/shorten', (req, res) => {
     const randomGeneratedUrl = generateRandomString(6);
     urlSchema.URLS.push({
         originalUrl: url,
-        code: `${randomGeneratedUrl}`
+        code: `${randomGeneratedUrl}`,
     });
     res.json({
         originalUrl: url,
-        code: `${randomGeneratedUrl}`
+        code: `${randomGeneratedUrl}`,
+        shortUrl : `${DOMAIN}/${randomGeneratedUrl}`
     });
 });
 

@@ -49,7 +49,6 @@ app.get('/:id',(req,res)=>{
 
 
     const urlData = urlSchema.URLS.find((entry)=> entry.code == id)
-    console.log(urlData);
 
     if(urlData){
         res.redirect(urlData.originalUrl);
